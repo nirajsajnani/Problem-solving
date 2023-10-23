@@ -1,0 +1,29 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int l = m+n;
+        int i,c=0,j,temp;
+        for(i=m;i<l;i++)
+        {
+            nums1[i]=nums2[c];
+            c++;
+        }
+        for(i=0;i<l;i++)
+        {
+            for(j=0;j<l-i-1;j++)
+            {
+                if(nums1[j]>nums1[j+1])
+                {
+                    temp=nums1[j];
+                    nums1[j]=nums1[j+1];
+                    nums1[j+1]=temp;
+                }
+            }
+        }
+        for(i=0;i<l;i++)
+        {
+            System.out.print(nums1[i]);
+        }
+
+        
+    }
+}
